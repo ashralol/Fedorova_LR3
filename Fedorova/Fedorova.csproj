@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C2CE2899-AEEB-46F0-A4E3-CD3031E28C62}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Fedorova</RootNamespace>
+    <AssemblyName>Fedorova</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Model1.cs" />
+    <Compile Include="Model\Roles.cs" />
+    <Compile Include="Model\Users.cs" />
+    <Compile Include="FormAutorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAutorization.Designer.cs">
+      <DependentUpon>FormAutorization.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormAutorization.resx">
+      <DependentUpon>FormAutorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="FormParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormParent.Designer.cs">
+      <DependentUpon>FormParent.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormParent.resx">
+      <DependentUpon>FormParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="FormDirector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDirector.Designer.cs">
+      <DependentUpon>FormDirector.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormDirector.resx">
+      <DependentUpon>FormDirector.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="FormManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManager.Designer.cs">
+      <DependentUpon>FormManager.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormManager.resx">
+      <DependentUpon>FormManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="FormSeller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSeller.Designer.cs">
+      <DependentUpon>FormSeller.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormSeller.resx">
+      <DependentUpon>FormSeller.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Photo\**\*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
